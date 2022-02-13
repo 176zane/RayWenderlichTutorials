@@ -23,7 +23,7 @@
 import UIKit
 import JavaScriptCore
 
-let movieUrl = "https://itunes.apple.com/us/rss/topmovies/limit=50/json"
+let movieUrl = "https://itunes.apple.com/us/rss/topmovies/limit=20/json"
 
 class MovieService {
 //    lazy var context: JSContext? = {
@@ -50,9 +50,8 @@ class MovieService {
         
         let context = JSContext()
         
-        guard let
-            commonJSPath = Bundle.main.path(forResource: "common", ofType: "js"),
-            let additionsJSPath = Bundle.main.path(forResource: "additions", ofType: "js") else {
+        guard let commonJSPath = Bundle.main.path(forResource: "common", ofType: "js"),
+              let additionsJSPath = Bundle.main.path(forResource: "additions", ofType: "js") else {
                 print("Unable to read resource files.")
                 return nil
         }
